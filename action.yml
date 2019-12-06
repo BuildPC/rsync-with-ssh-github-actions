@@ -20,6 +20,8 @@ inputs:
     description: 'execute commands before rsync'
   ssh_after:
     description: 'execute commands after rsync'
+  args:
+    description: 'arguments to pass for rsync'
 runs:
   using: 'docker'
   image: 'Dockerfile'
