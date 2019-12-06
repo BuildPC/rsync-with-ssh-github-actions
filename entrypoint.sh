@@ -56,7 +56,7 @@ executeSSH "$INPUT_SSH_BEFORE"
 echo "+++++++++++++++++++DONE RUNNING BEFORE SSH+++++++++++++++++++"
 echo "+++++++++++++++++++RUNNING rsync+++++++++++++++++++"
 run_rsync
-echo "+++++++++++++++++++DONE RUNNING SCP+++++++++++++++++++"
+echo "+++++++++++++++++++DONE RUNNING rsync+++++++++++++++++++"
 echo "+++++++++++++++++++RUNNING AFTER SSH+++++++++++++++++++"
 executeSSH "$INPUT_SSH_AFTER"
 echo "+++++++++++++++++++DONE RUNNING AFTER SSH+++++++++++++++++++"
