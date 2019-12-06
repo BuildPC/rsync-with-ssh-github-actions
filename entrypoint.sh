@@ -4,7 +4,7 @@
 set -eu
 
 
-setup_SSH(){
+setupSSH(){
     SSH_PATH="$HOME/.ssh"
     mkdir -p "$SSH_PATH"
     touch "$SSH_PATH/known_hosts"
