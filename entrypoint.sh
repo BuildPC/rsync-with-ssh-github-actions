@@ -8,7 +8,7 @@ setup_SSH(){
     SSH_PATH="$HOME/.ssh"
     mkdir -p "$SSH_PATH"
     touch "$SSH_PATH/known_hosts"
-    echo "$DEPLOY_KEY" > "$SSH_PATH/deploy_key"
+    echo "$INPUT_KEY" > "$SSH_PATH/deploy_key"
 
     chmod 700 "$SSH_PATH"
     chmod 600 "$SSH_PATH/known_hosts"
@@ -17,12 +17,12 @@ setup_SSH(){
     eval $(ssh-agent)
     ssh-add "$SSH_PATH/deploy_key"
 
-    ssh-keyscan -t rsa $HOST >> "$SSH_PATH/known_hosts"
+    ssh-keyscan -t rsa $INPUT_HOST >> "$SSH_PATH/known_hosts"
 }
 
 
 run_rsync(){
-    sh -c "rsync $INPUT_ARGS -e 'ssh -i $SSH_PATH/deploy_key -o StrictHostKeyChecking=no -p $INPUT_PORT' $GITHUB_WORKSPACE $INPUT_USER@$INPUT_HOST:$SERVER_DESTINATION"
+    sh -c "rsync $INPUT_ARGS -e 'ssh -i $SSH_PATH/deploy_key -o StrictHostKeyChecking=no -p $INPUT_PORT' $GITHUB_WORKSPACE $INPUT_USER@$INPUT_HOST:$INPUT_DESTINATION"
 }
 
 executeSSH() {

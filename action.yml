@@ -14,6 +14,8 @@ inputs:
     description: 'ssh user'
   key:
     description: 'content of ssh private key. ex raw content of ~/.ssh/id_rsa'
+  destination:
+    description: 'the path where rsync will use as destination'
   ssh_before:
     description: 'execute commands before rsync'
   ssh_after:
