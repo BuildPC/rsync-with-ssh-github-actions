@@ -53,10 +53,10 @@ executeSSH() {
 setupSSH
 echo "+++++++++++++++++++RUNNING BEFORE SSH+++++++++++++++++++"
 executeSSH "$INPUT_SSH_BEFORE"
-echo "+++++++++++++++++++RUNNING BEFORE SSH+++++++++++++++++++"
-echo "+++++++++++++++++++RUNNING SCP+++++++++++++++++++"
+echo "+++++++++++++++++++DONE RUNNING BEFORE SSH+++++++++++++++++++"
+echo "+++++++++++++++++++RUNNING rsync+++++++++++++++++++"
 run_rsync
-echo "+++++++++++++++++++RUNNING SCP+++++++++++++++++++"
+echo "+++++++++++++++++++DONE RUNNING SCP+++++++++++++++++++"
 echo "+++++++++++++++++++RUNNING AFTER SSH+++++++++++++++++++"
 executeSSH "$INPUT_SSH_AFTER"
-echo "+++++++++++++++++++RUNNING AFTER SSH+++++++++++++++++++"
+echo "+++++++++++++++++++DONE RUNNING AFTER SSH+++++++++++++++++++"
