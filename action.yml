@@ -1,0 +1,27 @@
+# This file is adapted from https://github.com/alinz/ssh-scp-action and https://github.com/AEnterprise/rsync-deploy.
+# All the actual credit goes to the original developers.
+
+name: 'rsync-with-ssh-github-actions'
+description: 'Executing remote ssh and rsync commands'
+author: 'Kerem Gure'
+inputs:
+  host:
+    description: 'ssh remote host'
+  port:
+    description: 'ssh remote port'
+    default: 22
+  user:
+    description: 'ssh user'
+  key:
+    description: 'content of ssh private key. ex raw content of ~/.ssh/id_rsa'
+  ssh_before:
+    description: 'execute commands before rsync'
+  ssh_after:
+    description: 'execute commands after rsync'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+branding:
+  icon: 'server'
+  color: 'green'
