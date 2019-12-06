@@ -22,6 +22,7 @@ setupSSH(){
 
 
 run_rsync(){
+    echo $GITHUB_WORKSPACE
     sh -c "rsync $INPUT_ARGS -e 'ssh -i $SSH_PATH/deploy_key -o StrictHostKeyChecking=no -p $INPUT_PORT' $GITHUB_WORKSPACE $INPUT_USER@$INPUT_HOST:$INPUT_DESTINATION"
 }
 
